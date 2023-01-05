@@ -1,37 +1,105 @@
 import { useState } from "react";
-import Header from "./components/Header";
 import Jotform from "react-jotform";
+import { Container, Navbar, Nav, Row, Button, Modal } from "react-bootstrap";
+import { CupHot } from "react-bootstrap-icons";
 
 function App() {
-  const [showSupportDevs, setShowSupportDevs] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
-      <div className="flex flex-col h-screen overflow-hidden">
-        <Header></Header>
-        <div className="w-full flex flex-col sm:flex-row flex-wrap sm:flex-nowrap flex-grow">
-          <div className="w-fixed w-full flex-shrink flex-grow-0 px-4 border-r border-slate-100">
-            <div className="sticky top-0 pt-1 w-full h-full">
-              <div>hello</div>
-              <div>hello</div>
-              <div>hello</div>
-              <div>hello</div>
-            </div>
-          </div>
-          <main role="main" className="w-full flex-grow pt-1 px-3">
-            <h1>Main Content</h1>
-            <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-              necessitatibus quasi, sunt possimus unde quos numquam ratione,
-              repellendus a sapiente aut molestiae. Earum sapiente ab velit
-              ipsam nemo a molestiae?
-            </div>
-          </main>
-          <div className="w-fixed w-full flex-shrink flex-grow-0 px-2 border-l border-slate-100">
-            <div className="flex sm:flex-col px-2">Sidebar</div>
-          </div>
-        </div>
-        <footer className="bg-gray-600 mt-auto text-white p-2">Footer</footer>
-      </div>
+      <Modal show={show} fullscreen={true} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <Jotform src="https://utahcounty.jotform.com/230044705720041"></Jotform>
+        </Modal.Body>
+      </Modal>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">Some sort of menu</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Link</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container>
+        <Row className="d-flex ">
+          <h1>Main Content</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            vero ratione corrupti, reprehenderit sunt hic esse est fugit
+            voluptatem debitis veniam totam ullam? Possimus, facere accusamus.
+            Architecto rem at alias.
+          </p>
+        </Row>
+      </Container>
+      <Container fluid>
+        <footer className="bg-light p-2 d-flex justify-content-center">
+          <Button onClick={handleShow}>
+            <CupHot></CupHot>
+          </Button>
+        </footer>
+      </Container>
     </>
   );
 }
